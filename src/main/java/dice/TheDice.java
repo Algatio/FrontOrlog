@@ -141,35 +141,35 @@ public class TheDice extends InputAdapter {
 		renderer.rect(position.x,position.y,30,30);
 	}
 
-//	@Override
-//	public boolean touchDown(int screenX, int screenY, int pointer, int button){
-//		Vector2 worldTouch = viewport.unproject(new Vector2(screenX, screenY));
-//
-//		if(worldTouch.x > position.x && worldTouch.x < position.x + SIZE){
-//			if(worldTouch.y > position.y && worldTouch.y < position.y + SIZE){
-//				touched = true;
-//				dragStartPosition = worldTouch;
-//
-//				//TODO HELP Start dice rolling Animation
-//			}
-//		}
-//
-//		return true;
-//	}
-//
-//	@Override
-//	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-//		if (touched) {
-//			touched = false;
-//			Vector2 dragEnd = viewport.unproject(new Vector2(screenX, screenY));
-//
-//			velocity.x += 3 * (dragEnd.x - dragStartPosition.x);
-//			velocity.y += 3 * (dragEnd.y - dragStartPosition.y);
-//			roll();
-//
-//			//TODO HELP Stop dice rolling Animation
-//		}
-//		return true;
-//	}
+	@Override
+	public boolean touchDown(int screenX, int screenY, int pointer, int button){
+		Vector2 worldTouch = viewport.unproject(new Vector2(screenX, screenY));
+
+		if(worldTouch.x > position.x && worldTouch.x < position.x + SIZE){
+			if(worldTouch.y > position.y && worldTouch.y < position.y + SIZE){
+				touched = true;
+				dragStartPosition = worldTouch;
+
+				//TODO HELP Start dice rolling Animation
+			}
+		}
+
+		return true;
+	}
+
+	@Override
+	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+		if (touched) {
+			touched = false;
+			Vector2 dragEnd = viewport.unproject(new Vector2(screenX, screenY));
+
+			velocity.x += 3 * (dragEnd.x - dragStartPosition.x);
+			velocity.y += 3 * (dragEnd.y - dragStartPosition.y);
+			roll();
+
+			//TODO HELP Stop dice rolling Animation
+		}
+		return true;
+	}
 
 }
