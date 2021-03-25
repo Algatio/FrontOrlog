@@ -32,7 +32,6 @@ public class MenuScreen implements Screen{
 	}
 	
 
-
 	@Override
 	public void show() {
 
@@ -45,10 +44,10 @@ public class MenuScreen implements Screen{
         stage.addActor(table);
         
        
-//       batch = new SpriteBatch();
-//		img = new Texture(Gdx.files.internal("core/fond.jpg") );
-//		sprite = new Sprite(img);
-        
+//        batch = new SpriteBatch();
+//        img = new Texture(Gdx.files.internal("core/fond.jpg") );
+//        sprite = new Sprite(img);
+//        
  
         Skin skin = new Skin(Gdx.files.internal("core/skin/glassy-ui.json"));
         
@@ -106,7 +105,7 @@ public class MenuScreen implements Screen{
 //		batch.begin();
 //		sprite.draw(batch);
 //		batch.end();
-		
+//		
 		
 		
 	}
